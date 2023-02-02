@@ -6,18 +6,26 @@
 //
 
 import SwiftUI
-//MARK: Stored Properties
-
 struct CalculationView: View {
+    //MARK: Stored Properties
+    //Keeps the input gicen by user
     
-//MARK: Computed Properties
+    //MARK: Computed Propertie
+    @State var inputGiven = ""
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            TextField("5.5", text: $inputGiven)
+                .font(.largeTitle)
+                .padding()
+        }
+        .navigationTitle("Square Me")
     }
 }
 
 struct CalculationView_Previews: PreviewProvider {
     static var previews: some View {
-        CalculationView()
+        NavigationView {
+            CalculationView()
+        }
     }
 }
